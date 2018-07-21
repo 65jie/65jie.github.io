@@ -93,18 +93,18 @@ function startHeartAnimation() {
 })(jQuery);
 
 function timeElapse(date){
-	//var current = Date();
-	// var seconds = (Date.parse(current) - Date.parse(date)) / 1000;
+	var current = Date();
+	var seconds = (Date.parse(current) - Date.parse(date)) / 1000;
 			
-	var heartbreak = new Date();
-	heartbreak.setFullYear(2018, 5, 23);	//代表月份的整数值从0（1月）到11（12月）
-	heartbreak.setHours(21);
-	heartbreak.setMinutes(0);
-	heartbreak.setSeconds(0);
-	heartbreak.setMilliseconds(0);
-	var seconds = (Date.parse(heartbreak) - Date.parse(date)) / 1000;
+	// var heartbreak = new Date();
+	// heartbreak.setFullYear(2018, 5, 23);	//代表月份的整数值从0（1月）到11（12月）
+	// heartbreak.setHours(21);
+	// heartbreak.setMinutes(0);
+	// heartbreak.setSeconds(0);
+	// heartbreak.setMilliseconds(0);
+	// var seconds = (Date.parse(heartbreak) - Date.parse(date)) / 1000;
 
-	var days = Math.floor(seconds / (3600 * 24));
+	var days = Math.floor(seconds / (3600 * 24)-2);
 	seconds = seconds % (3600 * 24);
 	var hours = Math.floor(seconds / 3600);
 	if (hours < 10) {
