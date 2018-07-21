@@ -104,7 +104,7 @@ function timeElapse(date){
 	// heartbreak.setMilliseconds(0);
 	// var seconds = (Date.parse(heartbreak) - Date.parse(date)) / 1000;
 
-	var days = Math.floor(seconds / (3600 * 24)-2);
+	var days = Math.floor(seconds / (3600 * 24));
 	seconds = seconds % (3600 * 24);
 	var hours = Math.floor(seconds / 3600);
 	if (hours < 10) {
