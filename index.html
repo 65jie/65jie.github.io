@@ -262,6 +262,142 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/28/杨辉三角数据结构/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="65jie">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://p06rvg36i.bkt.clouddn.com/blog/171130/46J463d24i.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="65jie's Homepage">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/28/杨辉三角数据结构/" itemprop="url">杨辉三角数据结构</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-28T21:29:28+08:00">
+                2018-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/09/28/杨辉三角数据结构/" class="leancloud_visitors" data-flag-title="杨辉三角数据结构">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;vector&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">struct BaseNode</span><br><span class="line">&#123;</span><br><span class="line">	int value;</span><br><span class="line">	int depth;</span><br><span class="line">	struct BaseNode* lparent;</span><br><span class="line">	struct BaseNode* rparent;</span><br><span class="line">	struct BaseNode* lchild;</span><br><span class="line">	struct BaseNode* rchild;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">void genPascalTri(BaseNode* &amp; node,int n)</span><br><span class="line">&#123;</span><br><span class="line">	std::vector&lt;BaseNode*&gt; cur;</span><br><span class="line">	std::vector&lt;BaseNode*&gt; las;</span><br><span class="line">	las.push_back(node);</span><br><span class="line">	for(int i=1;i&lt;n;++i)&#123;</span><br><span class="line">		for(int j=0;j&lt;=i;++j)&#123;</span><br><span class="line">			BaseNode* cnode = new BaseNode();</span><br><span class="line">			cur.push_back(cnode);</span><br><span class="line">			cur[j]-&gt;depth = i+1;</span><br><span class="line"></span><br><span class="line">			if(j==0)&#123;</span><br><span class="line">				cur[j]-&gt;value = las[0]-&gt;value;</span><br><span class="line">				cur[j]-&gt;lparent = NULL;</span><br><span class="line">				cur[j]-&gt;rparent = las[0];</span><br><span class="line">				las[0]-&gt;lchild = cur[j];</span><br><span class="line">			&#125;</span><br><span class="line">			else if (j==i)&#123;</span><br><span class="line">				cur[j]-&gt;value = las[i-1]-&gt;value;</span><br><span class="line">				cur[j]-&gt;rparent = NULL;</span><br><span class="line">				cur[j]-&gt;lparent = las[i-1];</span><br><span class="line">				las[i-1]-&gt;rchild = cur[j];</span><br><span class="line">			&#125;</span><br><span class="line">			else&#123;</span><br><span class="line">				cur[j]-&gt;value = las[j-1]-&gt;value + las[j]-&gt;value;</span><br><span class="line">				cur[j]-&gt;lparent = las[j-1];</span><br><span class="line">				cur[j]-&gt;rparent = las[j];</span><br><span class="line">				las[j-1]-&gt;rchild = cur[j];</span><br><span class="line">				las[j]-&gt;lchild = cur[j];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		las.clear();</span><br><span class="line">		las.assign(cur.begin(),cur.end());</span><br><span class="line">		cur.clear();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	BaseNode* node = new BaseNode();</span><br><span class="line">	node-&gt;value = 1;</span><br><span class="line">	node-&gt;depth = 1;</span><br><span class="line">	cout&lt;&lt;&quot;Please input n:&quot;&lt;&lt;endl;</span><br><span class="line">	int n;</span><br><span class="line">	cin&gt;&gt;n;</span><br><span class="line">	genPascalTri(node,n);</span><br><span class="line">	cout&lt;&lt;node-&gt;value&lt;&lt;endl;</span><br><span class="line">	for(int i=1;i&lt;n;++i)&#123;</span><br><span class="line">		if(i%2 == 1) node = node-&gt;lchild;</span><br><span class="line">		else node = node-&gt;rchild;</span><br><span class="line">		for(int j=0;j&lt;i;++j)&#123;</span><br><span class="line">			cout&lt;&lt;node-&gt;value&lt;&lt;&quot; &quot;;</span><br><span class="line">			if(i%2 == 1)node = node-&gt;rparent-&gt;rchild;</span><br><span class="line">			else node = node -&gt;lparent -&gt;lchild;</span><br><span class="line">		&#125;</span><br><span class="line">		cout&lt;&lt;node-&gt;value&lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+<div>    
+ 
+ 
+</div>
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/30/test/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -720,7 +856,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
