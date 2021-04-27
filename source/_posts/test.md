@@ -7,3 +7,5 @@ tags:
 
 # 公式
 $$ \int_{-\infty}^{\infty}e^{-x^2}\mathrm{d}x=\sqrt{\pi}$$
+
+test for auto deploy

@@ -1,0 +1,24 @@
+name: Build and Deploy
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with: 
+          persist-credentials: stopOnFalse
+
+      - name: Install and Build
+        run:  
+          npm install
+          npm run build
+        env:
+          CI: false
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@release/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: mater   # The branch the action should deploy to.
+          FOLDER: public  # The folder the action should deploy.
