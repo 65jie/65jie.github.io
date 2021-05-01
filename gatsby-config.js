@@ -3,7 +3,7 @@ module.exports = {
     title: `Wujie Liu`,
     author: {
       name: `Wujie Liu`,
-      summary: ` `,
+      summary: `Math Computer Economics`,
     },
     description: `About Past Future and Present`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
