@@ -62,7 +62,7 @@ const BlogPostTemplate = ({ data, location }) => {
           </li>
         </ul>
       </nav>
-      <Valine appId="MngEtvaokBzYRgEuAJx8CQQK-MdYXbMMI" appKey="qNBCjpM2NiilAEaIcTl95FkH"/>
+      <Valine path={window.location.pathname}/>
     </Layout>
   )
 }

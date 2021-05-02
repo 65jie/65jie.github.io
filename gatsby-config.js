@@ -133,6 +133,8 @@ module.exports = {
           appId: `MngEtvaokBzYRgEuAJx8CQQK-MdYXbMMI`,
           appKey: `qNBCjpM2NiilAEaIcTl95FkH`,
           avatar: `robohash`,
+          lang: `en`,
+          visitor: true,
       },
     },
   ],
