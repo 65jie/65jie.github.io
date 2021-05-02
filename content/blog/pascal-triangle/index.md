@@ -2,6 +2,7 @@
 title: Data structure of Pascal's triangle
 id: 0928212928
 date: 2018-09-28 21:29:28
+description: Pascal's triangle is a triangular array of the binomial coefficients that arises in probability theory, combinatorics, and algebra.
 tags:
 ---
 ```

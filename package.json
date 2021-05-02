@@ -2,7 +2,7 @@
   "name": "gatsby-starter-blog",
   "private": true,
   "description": "A starter for a blog powered by Gatsby and Markdown",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "author": "Wujie Liu <liuwujier@live.cn>",
   "bugs": {
     "url": "https://github.com/65jie/liuwujie.com/issues"
@@ -20,6 +20,7 @@
     "gatsby-plugin-valine": "^1.0.2",
     "gatsby-remark-copy-linked-files": "^3.2.0",
     "gatsby-remark-images": "^4.2.0",
+    "gatsby-remark-mathjax": "^1.0.0",
     "gatsby-remark-prismjs": "^4.2.0",
     "gatsby-remark-responsive-iframe": "^3.2.0",
     "gatsby-remark-smartypants": "^3.2.0",
