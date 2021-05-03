@@ -5,7 +5,7 @@ date: 2018-09-28 21:29:28
 description: Pascal's triangle is a triangular array of the binomial coefficients that arises in probability theory, combinatorics, and algebra.
 tags:
 ---
-```
+```C++
 #include <vector>
 #include <iostream>
 
@@ -83,3 +83,4 @@ int main()
 	return 0;
 }
 ```
+
